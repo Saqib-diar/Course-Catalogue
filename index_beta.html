@@ -1,0 +1,65 @@
+  <!DOCTYPE html>
+<html>
+    <head>
+        <title>your full courses</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+            <div class="navbar">
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">contact</a>
+                <a href="#" class="right">log in</a>
+                </div>
+
+            <div class="header">
+                <h1>Your All Courses</h1>
+                <p>A <b>Super</b> Opportunity to all of you.</p>
+                </div>
+
+
+
+          <div class="row">
+            <div class="side">
+            <h1 class="dep1">Departments..</h1>
+              <h2 class="dep">Choose your Department</h2>
+
+                <div id="jmplab">
+
+                </div>
+
+            </div>
+          </div>
+
+          <div class="footer">
+            <h1>Thank you!!!</h1>
+
+          </div>
+          <script type="text/javascript" src="index.js"></script>
+
+          <script type="text/javascript">
+          var para = document.createElement("P");
+
+          // Don't remove this. We'll use APIs to get this later.
+          departments = ["CSIT", "Chemical Engineering", "Civil Engineering"];
+          department_url = ["csit.html", "chemical.html", "civil.html"];
+          var data = "";
+          for (var i=0; i < departments.length; i++){
+            var deptname = departments[i];
+            var depturl = department_url[i];
+            data = data.concat(`
+            <h2 class="dep">${deptname}</h2>
+
+            <p>Recommended official Course outline for ${deptname}</p>
+            <p>Just click here then you will find all contents about ${deptname}</p>
+            <form action="${depturl}">
+                <button class="fakeimg" style="height:200px" type="submit" >${deptname}</button>
+            </form>`);
+            console.log(data);
+            para.innerHTML = data;
+            document.getElementById("jmplab").appendChild(para);
+          }
+          </script>
+
+    </body>
+</html>
